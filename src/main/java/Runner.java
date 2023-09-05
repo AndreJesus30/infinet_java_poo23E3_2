@@ -5,6 +5,7 @@ import com.oop.gestaovendas.entities.pedido.Solicitante;
 import com.oop.gestaovendas.entities.produto.BebidaImpl;
 import com.oop.gestaovendas.entities.produto.ComidaImpl;
 import com.oop.gestaovendas.entities.produto.Produto;
+import com.oop.gestaovendas.entities.produto.SobremesaImpl;
 import com.oop.gestaovendas.services.FormatadorDeListaProduto;
 import com.oop.gestaovendas.services.SolicitadorDeNovoPedidoServico;
 
@@ -27,9 +28,12 @@ public class Runner {
         Produto produto2 = new BebidaImpl(true, 500, TipoBebida.CocaCola, "Refrigerante", 10.00, 5467254);
         produto2.valorComDescontoPromocional(0.10);
 
+        Produto produto3 = new SobremesaImpl(3, true, false, "Pudim", 18.0, 6547847);
+
         List<Produto> listaProdutos = new ArrayList<Produto>();
         listaProdutos.add(produto1);
         listaProdutos.add(produto2);
+        listaProdutos.add(produto3);
 
         pedido.setNovoPedido(solicitante, listaProdutos,"Deixar na portaria do prédio", LocalDateTime.now());
 
